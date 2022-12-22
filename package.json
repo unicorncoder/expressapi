@@ -1,11 +1,13 @@
 {
   "name": "expressapi",
   "version": "1.0.0",
-  "main": "index.ts",
   "license": "MIT",
+  "engines": {
+    "node": "19.2.0"
+  },
   "scripts": {
-    "dev": "nodemon index.ts",
-    "start": "node build/index.js",
+    "dev": "ts-node index.ts",
+    "start": "node ./build/index.js",
     "build": "tsc"
   },
   "dependencies": {

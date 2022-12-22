@@ -6,10 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // const express=require("express")
 const express_1 = __importDefault(require("express"));
 const fs = require("fs");
+const cors = require("cors");
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 3000;
 let rawMemeData = fs.readFileSync("./views/memes.json");
 let memeData = JSON.parse(rawMemeData);
+app.use(cors());
 app.get("/memes", (req, res) => {
     res.json(memeData);
 });
